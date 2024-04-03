@@ -1,12 +1,12 @@
+//
+
 const outputDiv = document.querySelector("#dataContainer");
 const fetchBtn = document.querySelector("#fetchDataBtn");
 
 async function getSpillerInfo() {
-  //
-
   try {
     const spillerInfo = await fetch(`http://localhost:8080/spiller`);
-    // if (!spillerInfo.ok) throw new Error("Failed to get data!");
+    if (!spillerInfo.ok) throw new Error("Failed to get data!");
 
     const spiller = await spillerInfo.json();
     spiller.forEach((spiller) => {
